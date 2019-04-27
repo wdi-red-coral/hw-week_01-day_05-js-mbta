@@ -35,4 +35,3 @@ const mbta = [ //================================subway=========================
     - mbta[j][lastline].indexOf("Park Street"));} 
         
     // mbta("initline","initstation","lastline","laststation")
-    
