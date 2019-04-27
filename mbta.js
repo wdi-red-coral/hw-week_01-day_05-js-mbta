@@ -1,27 +1,19 @@
 //========================= Final Answer =========================//
 
-const red = ["South Station", "Park Street", "Kendall", "Central", "Harvard", "Porter", "Davis", "Alewife"];
-const green = ["Government Center", "Park Street", "Boylston", "Arlington", "Copley", "Hynes", "Kenmore"]
-const orange = ["North Station", "Haymarket", "Park Street", "State", "Downtown Crossing", "Chinatown", "Back Bay", "Forest Hills"];
-const subway = [red, green, orange];
-
+const subway = {
+  Red: ["South Station", "Park Street", "Kendall", "Central", "Harvard", "Porter", "Davis", "Alewife"],
+  Green: ["Government Center", "Park Street", "Boylston", "Arlington", "Copley", "Hynes", "Kenmore"],
+  Orange: ["North Station", "Haymarket", "Park Street", "State", "Downtown Crossing", "Chinatown", "Back Bay", "Forest Hills"]
+}
 const stopsBetweenStations = function (startLine, startStation, endLine, endStation) {
-  switch (startLine) {
-    case 'Red': startLine = 0;
-      break;
-    case 'Green': startLine = 1;
-      break;
-    case 'Orange': startLine = 2;
-      break;
-  }
-  switch (endLine) {
-    case 'Red': endLine = 0;
-      break;
-    case 'Green': endLine = 1;
-      break;
-    case 'Orange': endLine = 2;
-      break;
-  }
+
+  if (!(startLine in subway) || !(startLine in subway)) // true if "key" doesn't exist in object)
+  {
+    return "False subway line entry";
+  } else {
+  if (subway[startLine].indexOf(startStation) === -1 || subway[endLine].indexOf(endStation) === -1) {
+    return "False station entry";
+  } else {
 
   if (startLine === endLine) {  
     return Math.abs(subway[startLine].indexOf(startStation) - subway[endLine].indexOf(endStation)) + " stops."
@@ -36,6 +28,8 @@ const stopsBetweenStations = function (startLine, startStation, endLine, endStat
         return Math.abs(subway[startLine].indexOf(startStation) - subway[startLine].indexOf('Park Street')) + Math.abs(subway[endLine].indexOf('Park Street') - subway[endLine].indexOf(endStation)) + " stops.";
     } 
   }
+}
+}
 }
 
 
@@ -65,3 +59,9 @@ stopsBetweenStations('Orange', 'Forest Hills', 'Orange', 'State') // 4 stops
 
 stopsBetweenStations('Red', 'South Station', 'Orange', 'Chinatown') // 4 stops
 "4 stops."
+
+stopsBetweenStations('Red', 'State', 'Orange', 'Chinatown') 
+"False station entry"
+
+stopsBetweenStations('blue', 'State', 'Orange', 'Forest Hills') 
+"False subway line entry"
