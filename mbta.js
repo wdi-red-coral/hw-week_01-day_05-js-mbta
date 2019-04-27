@@ -158,7 +158,7 @@ function range(key1, key2, startPoint ,endPoint){
 /*The main function that take 4 args
 then it will check if StartLine matchign with each subway index  
 */
-function test (StartLine , StartStation, EndLine, EndStation){
+function stopsBetweenStations (StartLine , StartStation, EndLine, EndStation){
 if ( keyRed in subway[0] || keyGreen in subway[1] || keyOrange in subway[2] ){
    
     if (StartLine.match(keyRed)){
