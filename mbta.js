@@ -7,7 +7,7 @@ const subway = {
 }
 const stopsBetweenStations = function (startLine, startStation, endLine, endStation) {
 
-  if (!(startLine in subway) || !(startLine in subway)) // true if "key" doesn't exist in object)
+  if (!(startLine in subway) || !(endLine in subway)) // true if "key" doesn't exist in object)
   {
     return "False subway line entry";
   } else {
