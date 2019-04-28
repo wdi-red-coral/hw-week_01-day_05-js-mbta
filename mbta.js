@@ -11,8 +11,7 @@ let lines=[[{
     startStation:'Rider boards the train a Red Line and Park Street.',
     pauseStation:'Rider arrives at Red Line and Park Street.',
     fullStopStation:'Rider exits the train at Red Line and Park Street.',
-    transfareToGreen:'Rider transfers from Red Line to Green at Park Street.',
-    transfareToOrange:'Rider transfers from Red Line to Orange at Park Street.'
+    transfare:'Rider transfers from Line to Red at Park Street.'
 },
 {
     name:'Kendall',
@@ -80,8 +79,7 @@ let lines=[[{
     startStation:'Rider boards the train a Orange Line and Park Street.',
     pauseStation:'Rider arrives at Orange Line and Park Street.',
     fullStopStation:'Rider exits the train at Orange Line and Park Street.',
-    transfareToGreen:'Rider transfers from Orange Line to Green at Park Street.',
-    transfareToRed:'Rider transfers from Orange Line to Red at Park Street.'
+    transfare:'Rider transfers from Line to Orange at Park Street.'
 },
 {
     name:'State',
@@ -135,8 +133,7 @@ let lines=[[{
     startStation:'Rider boards the train a Green Line and Park Street.',
     pauseStation:'Rider arrives at Green Line and Park Street.',
     fullStopStation:'Rider exits the train at Green Line and Park Street.',
-    transfareToOrange:'Rider transfers from Red Line to Orange at Park Street.',
-    transfareToRed:'Rider transfers from Orange Line to Red at Park Street.'
+    transfare:'Rider transfers from Line to Green at Park Street.',
 },
 {
     name:'Boylston',
@@ -292,10 +289,11 @@ const stopsBetweenStations=function(colorStart,start,colorEnd,end){
                 }
                 stops++;
             }
+            let a =stops;
             if(sPSE<endOrder){
                 for(sPSE;sPSE<=endOrder;sPSE++){
-                    if(stops>0){
-                        console.log(lines[startLine][sPSE].startStation);
+                    if(stops===a){
+                        console.log(lines[startLine][sPSE].transfare);
                     }
                     else if(stops>0){
                         console.log(lines[startLine][sPSE].pauseStation);
@@ -305,8 +303,8 @@ const stopsBetweenStations=function(colorStart,start,colorEnd,end){
             }
             else if(sPSE>endOrder){
                 for(sPSE;sPSE>=endOrder;sPSE--){
-                    if(stops===0){
-                        console.log(lines[startLine][sPSE].startStation);
+                    if(stops===a){
+                        console.log(lines[startLine][sPSE].transfare);
                     }
                     else if(stops>0){
                         console.log(lines[startLine][sPSE].pauseStation);
@@ -325,10 +323,11 @@ const stopsBetweenStations=function(colorStart,start,colorEnd,end){
                 }
                 stops++;
             }
+            let a =stops;
             if(sPSE<endOrder){
                 for(sPSE;sPSE<=endOrder;sPSE++){
-                    if(stops===0){
-                        console.log(lines[startLine][sPSE].startStation);
+                    if(stops===a){
+                        console.log(lines[startLine][sPSE].transfare);
                     }
                     else if(stops>0){
                         console.log(lines[startLine][sPSE].pauseStation);
@@ -338,8 +337,8 @@ const stopsBetweenStations=function(colorStart,start,colorEnd,end){
             }
             else if(sPSE>endOrder){
                 for(sPSE;sPSE>=endOrder;sPSE--){
-                    if(stops===0){
-                        console.log(lines[startLine][sPSE].startStation);
+                    if(stops===a){
+                        console.log(lines[startLine][sPSE].transfare);
                     }
                     else if(stops>0){
                         console.log(lines[startLine][sPSE].pauseStation);
