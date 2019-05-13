@@ -6,7 +6,7 @@ const sLines = {
     "Central",
     "Harvard",
     "Porter",
-    "Davis",
+    "Daviis",
     "Alewife"
    ],
   Green: ["Government Center",
